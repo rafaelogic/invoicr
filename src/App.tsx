@@ -15,7 +15,8 @@ import {
   ClientDefaultsModal,
   AnalyticsTab,
   SettingsTab,
-  StatusModal
+  StatusModal,
+  SupportContact
 } from './components'
 import { useInvoices, useClients, useNotifications, useAppSettings } from './hooks/useData'
 
@@ -537,6 +538,12 @@ const App: React.FC = () => {
           title={statusModal.title}
           message={statusModal.message}
           onClose={closeStatusModal}
+        />
+
+        {/* Support Contact Footer */}
+        <SupportContact 
+          appName="Invoicr"
+          version="1.0.0"
         />
       </div>
     </div>
