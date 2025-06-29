@@ -1,0 +1,54 @@
+{
+  "name": "invoicr-chrome-extension",
+  "version": "1.0.0",
+  "description": "Chrome extension for creating and managing invoices",
+  "type": "module",
+  "scripts": {
+    "dev": "vite build --watch --mode development",
+    "build": "tsc && vite build",
+    "build:prod": "tsc && vite build --mode production",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext ts,tsx --fix",
+    "package": "npm run build:prod && cd dist && zip -r ../invoicr-extension.zip . -x '*.map'",
+    "clean": "rm -rf dist",
+    "load-instructions": "echo '\n🚀 LOAD EXTENSION INSTRUCTIONS:\n1. npm run build\n2. Chrome -> chrome://extensions/\n3. Enable Developer mode\n4. Load unpacked -> Select: dist/ folder\n5. Right-click extension icon -> Options\n'"
+  },
+  "dependencies": {
+    "canvas-confetti": "^1.9.3",
+    "lucide-react": "^0.263.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/chrome": "^0.0.268",
+    "@types/node": "^20.5.1",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "postcss": "^8.4.27",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  },
+  "keywords": [
+    "chrome-extension",
+    "invoice",
+    "react",
+    "tailwindcss",
+    "typescript"
+  ],
+  "author": "Rafa Rafael",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
